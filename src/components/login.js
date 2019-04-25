@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import InputBox from './inputBox';
+import ShakeBox from '../HOC/shakeBox';
 
 const Wraper = styled.form`
     width: 40%;
@@ -28,4 +29,4 @@ class Login extends Component{
     }
 }
 
-export default Login;
+export default ShakeBox(Login);

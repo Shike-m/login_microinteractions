@@ -1,0 +1,16 @@
+
+.shakeable{
+    animation: headshake 1s 3;
+}
+
+@keyframes headshake{
+    0%{
+        left:-15px;
+    }
+    50%{
+        left: 15px;
+    }
+    100%{
+        left:0;
+    }
+}
