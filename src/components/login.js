@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import InputBox from './inputBox';
 
-const Wraper=styled.div`
+const Wraper = styled.form`
+    width: 40%;
+    margin: 20px auto;
+    padding: 20px 40px;
+    border: 1px solid #747676;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     background:#f6f6f6;
@@ -16,7 +21,8 @@ class Login extends Component{
         return (
             <Wraper>
                 <InputBox title="username" id="username" inputType="text" />
-                <InputBox title="passward" id="passward" inputType="passward" />
+                <InputBox title="password" id="password" inputType="password" />
+                <button>Log in</button>
             </Wraper>
         )
     }

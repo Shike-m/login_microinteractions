@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
-const ShackBox = (Target) => {
+const shakable = {
+    
+}
+const ShakeBox = (Target) => {
     return class extends Component {
         render() {
             return (
@@ -11,4 +14,4 @@ const ShackBox = (Target) => {
         }
     }
 }
-export default ShackBox;
+export default ShakeBox;

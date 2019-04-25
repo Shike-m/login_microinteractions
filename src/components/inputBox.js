@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Label=styled.label`
@@ -12,11 +12,10 @@ const Input = styled.input`
    padding: 10px;
 `;
 const InputBox=({title,id,inputType})=> {
-       
             return (
                 <div style={{display:'flex',alignItems:'center'}}>
-                    <Label htmlFor={id}>{title}</Label>
-                    <Input type={inputType}placeholder={title}/>
+                    <Label htmlFor={id} >{title}</Label>
+                    <Input type={inputType} placeholder={title} id={id}/>
                 </div>
             )
         
