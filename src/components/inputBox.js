@@ -13,16 +13,46 @@ const Input = styled.input`
    margin: 10px;
    padding: 10px;
 `;
-const InputBox = ({ title, id, inputType,className }) => {
-    ShakeBox.displayName = "InputBox";
-    return (
-        <div style={{ display: 'flex', alignItems: 'center' }}
-            className={className}>
-            <Label htmlFor={id} >{title}</Label>
-            <Input type={inputType} placeholder={title} id={id} />
-        </div>
-    )
+class InputBox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputName: 'John',
+            inputValue:'123'
+        }
+        this.handleChange = this.handleChange.bind(this);
+    }
+    
+    handleChange(e) {
+        e.preventDefault();
+        console.log("handlechange in inputbox", e.target.value);
+        // const ev = e.target; //must defined in advance, 
+                            // otherwise cannot read event in functional setState;
+        // this.setState((ev)=>({
+        //         inputName: ev.value,
+        //         inputValue: ev.value,
+            
+        // }));
+        this.setState({
+            inputName: e.target.name,
+            inputValue:e.target.value
+        })
+        this.props.handleLoginChange(this.state.inputName, this.state.inputValue);
+    }
+    render() {
+        const { className, inputType, title } = this.props;
+        return (
+            <div style={{ display: 'flex', alignItems: 'center' }}
+                className={className}>
+                <Label>{title}
+                    <Input type={inputType} name={title}
+                        placeholder={title} onChange={this.handleChange} />
+                </Label>
+            </div>
+        )
+    }
+
 
 
 }
-export default ShakeBox(InputBox);
+export default InputBox;

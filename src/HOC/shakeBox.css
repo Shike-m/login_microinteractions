@@ -4,13 +4,22 @@
 }
 
 @keyframes headshake{
-    0%{
-        transform:translateX(-15px);
-    }
-    50%{
-        transform:translateX(15px);
-    }
-    100%{
-        transfrom:translateX(0);
-    }
+   from,
+   to{
+       transform:translate3d(0,0,0);
+   }
+   10%,
+   30%,
+   50%,
+   70%,
+   90%{
+       transform: translata3d(15px,0,0);
+   }
+   20%,
+   40%,
+   60%,
+   80%{
+       transform: translate3d(-15px,0,0);
+   }
+      
 }

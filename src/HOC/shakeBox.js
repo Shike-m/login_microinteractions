@@ -5,22 +5,12 @@ const ShakeBox = (WrappedComponent) => {
     
     class ShakeBox extends Component {
        
-        state = {
-            s:false
-        }
-        handleClick = () => {
-            console.log("onclick")
-            this.setState({
-                s: !this.state.s,
-            })
-        }
-
         render() {
             return (
                 <WrappedComponent
                     {...this.props}
-                    handleClick={()=>this.handleClick}
-                    className='shake'
+                   
+                    // className='shake'
                 />
             )
         }

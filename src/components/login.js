@@ -18,11 +18,37 @@ const Wraper = styled.form`
 `;
 
 class Login extends Component{
+    state = {
+        username: "Tom",
+        password: "123",
+        shakeable: false
+    }
+    handleSubmit = () => {
+        if (this.state.username !== 'Tom' || this.state.password !== "123") {
+            this.setState({
+                shakeable:true
+            })
+        }
+        console.log("submit",this.state.shakeable)
+    }
+    handleChange = (inputName,inputValue) => {
+        console.log("onchnage",this.state.username)
+        this.setState({
+           [inputName]:[inputValue]
+        })
+        
+    }
     render() {
+        const { shakeable } = this.state;
         return (
-            <Wraper onSubmit={this.handleSubmit}>
-                <InputBox title="username" id="username" inputType="text" />
-                <InputBox title="password" id="password" inputType="password" />
+            <Wraper onSubmit={this.handleSubmit} >
+                <InputBox title="username" inputType="text"
+                    className={shakeable ? "shake" : ""}
+                    handleLoginChange={this.handleChange}
+                />
+                <InputBox title="password" inputType="password"
+                    onChange={this.handleChange}
+                />
                 <button>Log in</button>
             </Wraper>
         )
