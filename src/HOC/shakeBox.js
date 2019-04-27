@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import "./shakeBox.css";
 
-const ShakeBox = (Target) => {
-    return class extends Component {
+const ShakeBox = (WrappedComponent) => {
+    
+    class ShakeBox extends Component {
+       
         state = {
             s:false
         }
@@ -12,15 +14,18 @@ const ShakeBox = (Target) => {
                 s: !this.state.s,
             })
         }
+
         render() {
             return (
-                <Target
+                <WrappedComponent
                     {...this.props}
-                    onClick={()=>this.handleClick}
-                  
+                    handleClick={()=>this.handleClick}
+                    className='shake'
                 />
             )
         }
     }
+    ShakeBox.displayName = "InputBox_to_shake";
+    return ShakeBox;
 }
 export default ShakeBox;

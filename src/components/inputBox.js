@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import ShakeBox from '../HOC/shakeBox';
+import ShakeBox from '../HOC/shakeBox'
 
-const Label=styled.label`
+
+const Label = styled.label`
     font-size:16px;
     margin: 10px;
     padding: 10px;
@@ -12,14 +13,16 @@ const Input = styled.input`
    margin: 10px;
    padding: 10px;
 `;
-const InputBox=({title,id,inputType})=> {
-            return (
-                <div style={{display:'flex',alignItems:'center'}}>
-                    <Label htmlFor={id} >{title}</Label>
-                    <Input type={inputType} placeholder={title} id={id} />  
-                </div>
-            )
-        
-    
+const InputBox = ({ title, id, inputType,className }) => {
+    ShakeBox.displayName = "InputBox";
+    return (
+        <div style={{ display: 'flex', alignItems: 'center' }}
+            className={className}>
+            <Label htmlFor={id} >{title}</Label>
+            <Input type={inputType} placeholder={title} id={id} />
+        </div>
+    )
+
+
 }
 export default ShakeBox(InputBox);

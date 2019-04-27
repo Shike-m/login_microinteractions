@@ -20,7 +20,7 @@ const Wraper = styled.form`
 class Login extends Component{
     render() {
         return (
-            <Wraper>
+            <Wraper onSubmit={this.handleSubmit}>
                 <InputBox title="username" id="username" inputType="text" />
                 <InputBox title="password" id="password" inputType="password" />
                 <button>Log in</button>

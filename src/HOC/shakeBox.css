@@ -1,16 +1,16 @@
 
-.shakeable{
-    animation: headshake 1s 3;
+.shake{
+    animation: headshake .3s infinite;
 }
 
 @keyframes headshake{
     0%{
-        left:-15px;
+        transform:translateX(-15px);
     }
     50%{
-        left: 15px;
+        transform:translateX(15px);
     }
     100%{
-        left:0;
+        transfrom:translateX(0);
     }
 }
