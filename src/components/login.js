@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import InputBox from './inputBox';
 import ShakeBox from '../HOC/shakeBox';
 
-const Wraper = styled.form`
+const Wraper = styled.div`
     width: 40%;
     margin: 20px auto;
     padding: 20px 40px;
@@ -21,35 +21,36 @@ class Login extends Component{
     state = {
         username: "Tom",
         password: "123",
-        shakeable: false
+        className: ""
     }
     handleSubmit = () => {
         if (this.state.username !== 'Tom' || this.state.password !== "123") {
             this.setState({
-                shakeable:true
+                className:"shake"
             })
         }
-        console.log("submit",this.state.shakeable)
+       
     }
-    handleChange = (inputName,inputValue) => {
-        console.log("onchnage",this.state.username)
+    handleChange = (inputName,inputValue) => {  
         this.setState({
            [inputName]:[inputValue]
         })
-        
+       
     }
+    
     render() {
-        const { shakeable } = this.state;
+        const { className } = this.state;
         return (
-            <Wraper onSubmit={this.handleSubmit} >
+            <Wraper >
                 <InputBox title="username" inputType="text"
-                    className={shakeable ? "shake" : ""}
+                    className={className}
                     handleLoginChange={this.handleChange}
                 />
                 <InputBox title="password" inputType="password"
-                    onChange={this.handleChange}
+                    className={className}
+                    handleLoginChange={this.handleChange}
                 />
-                <button>Log in</button>
+                <button onClick={this.handleSubmit}>Log in</button>
             </Wraper>
         )
     }

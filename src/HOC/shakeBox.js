@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./shakeBox.css";
+// import "./shakeBox.css";
 
 const ShakeBox = (WrappedComponent) => {
     
@@ -9,7 +9,6 @@ const ShakeBox = (WrappedComponent) => {
             return (
                 <WrappedComponent
                     {...this.props}
-                   
                     // className='shake'
                 />
             )

@@ -1,6 +1,6 @@
 
 .shake{
-    animation: headshake .3s infinite;
+    animation: headshake .1s 3;
 }
 
 @keyframes headshake{
